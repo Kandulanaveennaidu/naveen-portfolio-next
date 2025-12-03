@@ -2,10 +2,14 @@ import { NextRequest, NextResponse } from "next/server";
 import { sendZoomBookingEmails } from "@/lib/email";
 import { bookSlot, isSlotBooked } from "@/lib/bookings";
 
-// Zoom API credentials from environment variables
-const ZOOM_ACCOUNT_ID = process.env.ZOOM_ACCOUNT_ID;
-const ZOOM_CLIENT_ID = process.env.ZOOM_CLIENT_ID;
-const ZOOM_CLIENT_SECRET = process.env.ZOOM_CLIENT_SECRET;
+// Zoom API credentials - read and trim at runtime
+function getZoomCredentials() {
+  return {
+    accountId: (process.env.ZOOM_ACCOUNT_ID || "").trim(),
+    clientId: (process.env.ZOOM_CLIENT_ID || "").trim(),
+    clientSecret: (process.env.ZOOM_CLIENT_SECRET || "").trim(),
+  };
+}
 
 interface ZoomTokenResponse {
   access_token: string;
@@ -25,10 +29,12 @@ interface ZoomMeetingResponse {
 
 // Get Zoom OAuth access token using Server-to-Server OAuth
 async function getZoomAccessToken(): Promise<string> {
-  const tokenUrl = `https://zoom.us/oauth/token?grant_type=account_credentials&account_id=${ZOOM_ACCOUNT_ID}`;
+  const { accountId, clientId, clientSecret } = getZoomCredentials();
+  
+  const tokenUrl = `https://zoom.us/oauth/token?grant_type=account_credentials&account_id=${accountId}`;
 
   const credentials = Buffer.from(
-    `${ZOOM_CLIENT_ID}:${ZOOM_CLIENT_SECRET}`
+    `${clientId}:${clientSecret}`
   ).toString("base64");
 
   const response = await fetch(tokenUrl, {
