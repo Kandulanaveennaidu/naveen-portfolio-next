@@ -16,7 +16,9 @@ function createTransporter() {
 // Get email configuration at runtime with trimming - use a getter-like pattern
 const emailConfig = {
   get from() {
-    const organizerName = (process.env.ORGANIZER_NAME || "Naveen Kandula").trim();
+    const organizerName = (
+      process.env.ORGANIZER_NAME || "Naveen Kandula"
+    ).trim();
     const emailFrom = (process.env.EMAIL_FROM || "").trim();
     return `"${organizerName}" <${emailFrom}>`;
   },
@@ -1090,7 +1092,7 @@ export async function sendZoomBookingEmails(
 ): Promise<{ success: boolean; error?: string }> {
   try {
     const transporter = createTransporter();
-    
+
     // Send email to customer
     await transporter.sendMail({
       from: emailConfig.from,
@@ -1123,7 +1125,7 @@ export async function sendContactFormEmails(
 ): Promise<{ success: boolean; error?: string }> {
   try {
     const transporter = createTransporter();
-    
+
     // Send confirmation email to customer
     await transporter.sendMail({
       from: emailConfig.from,
@@ -1168,7 +1170,7 @@ export async function sendProjectInquiryEmails(data: {
 }): Promise<{ success: boolean; error?: string }> {
   try {
     const transporter = createTransporter();
-    
+
     const ptLabels: Record<string, string> = {
       "web-app": "Web Application",
       "mobile-app": "Mobile App",

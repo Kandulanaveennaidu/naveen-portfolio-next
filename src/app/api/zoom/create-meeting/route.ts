@@ -30,12 +30,12 @@ interface ZoomMeetingResponse {
 // Get Zoom OAuth access token using Server-to-Server OAuth
 async function getZoomAccessToken(): Promise<string> {
   const { accountId, clientId, clientSecret } = getZoomCredentials();
-  
+
   const tokenUrl = `https://zoom.us/oauth/token?grant_type=account_credentials&account_id=${accountId}`;
 
-  const credentials = Buffer.from(
-    `${clientId}:${clientSecret}`
-  ).toString("base64");
+  const credentials = Buffer.from(`${clientId}:${clientSecret}`).toString(
+    "base64"
+  );
 
   const response = await fetch(tokenUrl, {
     method: "POST",
