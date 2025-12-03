@@ -10,6 +10,7 @@ A modern, production-ready portfolio website built with **Next.js 15**, **React 
 ## ✨ Features
 
 ### 🎨 **Modern UI/UX**
+
 - Responsive design for all devices
 - Dark/Light theme toggle
 - Smooth Framer Motion animations
@@ -17,12 +18,14 @@ A modern, production-ready portfolio website built with **Next.js 15**, **React 
 - Professional ShadCN UI components
 
 ### 🤖 **AI-Powered Chatbot**
+
 - Gemini AI integration
 - Guides users through the portfolio
 - Smart navigation suggestions
 - Answers questions about skills, projects, and services
 
 ### 📅 **Zoom Meeting Booking**
+
 - Real Zoom meeting creation via API
 - 4-step booking wizard
 - Date and time selection
@@ -30,12 +33,14 @@ A modern, production-ready portfolio website built with **Next.js 15**, **React 
 - Slot availability management
 
 ### 📧 **Email Notifications**
+
 - Gmail SMTP integration
 - Professional HTML email templates
 - Confirmations for bookings, contact form, and project inquiries
 - Both user and organizer notifications
 
 ### 📋 **Project Inquiry System**
+
 - Multi-step project wizard
 - Project type, budget, timeline selection
 - Feature requirements
@@ -43,20 +48,21 @@ A modern, production-ready portfolio website built with **Next.js 15**, **React 
 
 ## 🛠️ Tech Stack
 
-| Category | Technologies |
-|----------|-------------|
-| **Framework** | Next.js 15 (App Router) |
-| **Language** | TypeScript 5 |
-| **Styling** | TailwindCSS 4, ShadCN UI |
-| **Animations** | Framer Motion |
-| **AI** | Google Gemini API |
-| **Email** | Nodemailer (Gmail SMTP) |
-| **Video** | Zoom API (Server-to-Server OAuth) |
-| **Deployment** | Vercel |
+| Category       | Technologies                      |
+| -------------- | --------------------------------- |
+| **Framework**  | Next.js 15 (App Router)           |
+| **Language**   | TypeScript 5                      |
+| **Styling**    | TailwindCSS 4, ShadCN UI          |
+| **Animations** | Framer Motion                     |
+| **AI**         | Google Gemini API                 |
+| **Email**      | Nodemailer (Gmail SMTP)           |
+| **Video**      | Zoom API (Server-to-Server OAuth) |
+| **Deployment** | Vercel                            |
 
 ## 🚀 Getting Started
 
 ### Prerequisites
+
 - Node.js 18+
 - npm or yarn
 - Gmail account with App Password
@@ -66,17 +72,20 @@ A modern, production-ready portfolio website built with **Next.js 15**, **React 
 ### Installation
 
 1. **Clone the repository**
+
 ```bash
 git clone https://github.com/Kandulanaveennaidu/naveen-portfolio-next.git
 cd naveen-portfolio-next
 ```
 
 2. **Install dependencies**
+
 ```bash
 npm install
 ```
 
 3. **Set up environment variables**
+
 ```bash
 cp .env.example .env.local
 ```
@@ -84,6 +93,7 @@ cp .env.example .env.local
 4. **Configure your `.env.local`** (see Environment Variables section)
 
 5. **Run development server**
+
 ```bash
 npm run dev
 ```
@@ -124,14 +134,14 @@ GEMINI_API_KEY=your_gemini_api_key
 
 ## 📄 Pages
 
-| Page | URL | Description |
-|------|-----|-------------|
-| Home | `/` | Main portfolio with all sections |
-| Projects | `/projects` | Detailed project showcase |
-| Contact | `/contact` | Booking & contact options |
-| Zoom Booking | `/contact?view=booking` | Schedule a Zoom meeting |
-| Send Message | `/contact?view=message` | Contact form |
-| Start Project | `/start-project` | Project inquiry wizard |
+| Page          | URL                     | Description                      |
+| ------------- | ----------------------- | -------------------------------- |
+| Home          | `/`                     | Main portfolio with all sections |
+| Projects      | `/projects`             | Detailed project showcase        |
+| Contact       | `/contact`              | Booking & contact options        |
+| Zoom Booking  | `/contact?view=booking` | Schedule a Zoom meeting          |
+| Send Message  | `/contact?view=message` | Contact form                     |
+| Start Project | `/start-project`        | Project inquiry wizard           |
 
 ## 🌐 Deployment
 
@@ -148,6 +158,7 @@ GEMINI_API_KEY=your_gemini_api_key
 ## 📧 Email Templates
 
 The application includes professional HTML email templates for:
+
 - ✅ Zoom meeting confirmations (customer & organizer)
 - ✅ Contact form submissions (customer & organizer)
 - ✅ Project inquiry submissions (customer & organizer)
@@ -155,6 +166,7 @@ The application includes professional HTML email templates for:
 ## 👨‍💻 Author
 
 **Naveen Kandula**
+
 - GitHub: [@Kandulanaveennaidu](https://github.com/Kandulanaveennaidu)
 - LinkedIn: [kandulanaveen1](https://linkedin.com/in/kandulanaveen1/)
 - Email: kandulanaveennaidu017@gmail.com
